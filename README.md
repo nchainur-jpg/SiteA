@@ -2,9 +2,9 @@
 
 Статический сайт. Файлы сайта лежат в папке `public/`.
 
-## Публикация на Cloudflare Pages
+## Публикация
 
-- Framework preset: **None**
-- Build command: *(пусто)*
-- Build output directory: `public`
-- Production branch: `main`
+Сайт публикуется на GitHub Pages автоматически при каждом push в `main`
+(см. `.github/workflows/pages.yml`).
+
+Адрес: https://nchainur-jpg.github.io/SiteA/
