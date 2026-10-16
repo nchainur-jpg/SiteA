@@ -37,10 +37,26 @@
     h1 { font-size: clamp(40px, 9vw, 72px); line-height: 1; margin: 20px 0 16px; letter-spacing: -.03em; }
     p { font-size: 18px; line-height: 1.5; color: var(--muted); }
     .en { margin-top: 32px; padding-top: 20px; border-top: 1px solid color-mix(in srgb, var(--fg) 12%, transparent); font-size: 16px; }
+    .flower { width: 160px; height: 200px; display: block; margin: 0 0 24px; }
+    .flower .head { transform-origin: 80px 70px; animation: sway 4s ease-in-out infinite; }
+    .flower .petals { transform-origin: 80px 70px; animation: spin 24s linear infinite; }
+    @keyframes sway { 0%,100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .flower .head, .flower .petals { animation: none; } }
   </style>
 </head>
 <body>
   <main>
+    <svg class="flower" viewBox="0 0 160 200" role="img" aria-label="Цветок">
+      <path d="M80 92 C 78 130, 84 160, 80 196" stroke="#3f9b4f" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M80 150 C 60 140, 44 146, 36 160 C 54 166, 70 162, 80 150 Z" fill="#4caf5c"/>
+      <path d="M81 130 C 100 118, 118 122, 126 136 C 108 144, 92 140, 81 130 Z" fill="#4caf5c"/>
+      <g class="head">
+        <g class="petals" fill="#ff7aa8"><ellipse cx="80" cy="42" rx="14" ry="26" transform="rotate(0 80 70)"/><ellipse cx="80" cy="42" rx="14" ry="26" transform="rotate(45 80 70)"/><ellipse cx="80" cy="42" rx="14" ry="26" transform="rotate(90 80 70)"/><ellipse cx="80" cy="42" rx="14" ry="26" transform="rotate(135 80 70)"/><ellipse cx="80" cy="42" rx="14" ry="26" transform="rotate(180 80 70)"/><ellipse cx="80" cy="42" rx="14" ry="26" transform="rotate(225 80 70)"/><ellipse cx="80" cy="42" rx="14" ry="26" transform="rotate(270 80 70)"/><ellipse cx="80" cy="42" rx="14" ry="26" transform="rotate(315 80 70)"/></g>
+        <circle cx="80" cy="70" r="16" fill="#ffc83d"/>
+        <circle cx="75" cy="65" r="4" fill="#fff" opacity=".5"/>
+      </g>
+    </svg>
     <div class="status"><span class="dot"></span>В разработке</div>
     <h1>Скоро здесь будет новый сайт</h1>
     <p>Мы готовим что-то интересное. Загляните чуть позже.</p>
